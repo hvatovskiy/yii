@@ -6,11 +6,13 @@ $db = require(__DIR__ . '/db.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'defaultRoute'=>'post/index',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'BfhzHy-2ydZ1xB6VJVncZd5xMOb5LMy6',
+
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -39,14 +41,15 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<action>'=> 'post/<action>',
             ],
         ],
-        */
+
     ],
     'params' => $params,
 ];
