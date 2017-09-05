@@ -9,6 +9,8 @@
 namespace app\controllers;
 
 
+use app\models\Myform;
+
 class PostController extends AppController
 {
     public function actionIndex($name='')
@@ -18,8 +20,9 @@ class PostController extends AppController
         return $this->render('index', compact('var','vor','name'));
     }
 
-    public function actionTest()
+    public function actionForm()
     {
-        return $this->render('Test');
+        $form=new Myform();
+        return $this->render('form',compact('form'));
     }
 }
