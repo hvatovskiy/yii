@@ -23,5 +23,11 @@ class Myform extends Model
             [['email'],'email'],
         ];
     }
+    public function attributeLabels()
+    {
+      return [
+          'name'=>'Your Name',
+      ];
+    }
 
 }

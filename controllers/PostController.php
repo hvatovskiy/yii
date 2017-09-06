@@ -11,6 +11,7 @@ namespace app\controllers;
 
 use app\models\Myform;
 
+
 class PostController extends AppController
 {
     public function actionIndex($name='')
@@ -23,6 +24,9 @@ class PostController extends AppController
     public function actionForm()
     {
         $form=new Myform();
+        $form->attributes=\Yii::$app->request->post(
+            'Myform'
+        );
         return $this->render('form',compact('form'));
     }
 }
